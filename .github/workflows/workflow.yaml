@@ -1,0 +1,21 @@
+name: Simple Workflow
+
+# Triggers the workflow on push events but only for the main branch
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  example_job:
+    # The type of machine the job runs on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Runs a single command
+      - name: Run a command
+        run: echo "Hello, GitHub Actions!"
